@@ -20,28 +20,31 @@
 
 // Predefined set of tones 
 int speakerPin = 4;
-const float melody[] = {c4, d, e, f, g, a, b, c5};
-const int noteDurations[] = {4, 4, 4, 4, 4, 4, 4, 4};
+const float marry[] = {e, d, c4, d, e, e, e, d, d, d, e, g, g, e, d, c4, d, e, e, e, e, d, d, e, d, c4};
 
-const int quarterNote = 1000; // 1 second for a quarter note
-const int halfNote = 2 * quarterNote; // 2 seconds for a half note
+// -------- Another melody -------- //
+//const float melody[] = {c4, d, e, f, g, a, b, c5};
+//const int noteDurations[] = {4, 4, 4, 4, 4, 4, 4, 4};
 
-// Playtone Function //
-void playTone(float frequency, long duration) {
-  // Calculate the period of the note (in microseconds)
-  float period = 1000000.0 / frequency;
-  
-  // Calculate the delay half the period
-  int delayTime = period / 2.0;
-
-  // Loop for the desired duration
-  for (long i = 0; i < duration * 1000L; i += period) {
-    digitalWrite(speakerPin, HIGH);
-    delayMicroseconds(delayTime);
-    digitalWrite(speakerPin, LOW);
-    delayMicroseconds(delayTime);
-  }
-}
+//const int quarterNote = 1000; // 1 second for a quarter note
+//const int halfNote = 2 * quarterNote; // 2 seconds for a half note
+//
+//// Playtone Function //
+//void playTone(float frequency, long duration) {
+//  // Calculate the period of the note (in microseconds)
+//  float period = 1000000.0 / frequency;
+//  
+//  // Calculate the delay half the period
+//  int delayTime = period / 2.0;
+//
+//  // Loop for the desired duration
+//  for (long i = 0; i < duration * 1000L; i += period) {
+//    digitalWrite(speakerPin, HIGH);
+//    delayMicroseconds(delayTime);
+//    digitalWrite(speakerPin, LOW);
+//    delayMicroseconds(delayTime);
+//  }
+//}
 
 
 // ----------------------------------------------------------------- //
@@ -176,15 +179,10 @@ if(power == 1)
   if((mo < 25 && mo < 0 ) || song == 1) // song mode - acting as Latch to remember the mode selected. //
   {
     song = 1;
+    play = 0;
     // Play the melody
-    for (int i = 0; i < sizeof(melody) / sizeof(melody[0]); i++) 
-    {
-    playTone(melody[i], noteDurations[i] * quarterNote);    
-    // Pause between notes
-    delay(quarterNote / 2);
-    }
-    // Pause between melodies (repeat the melody)
-    delay(10);
+    for(int i=0;i<=26 ;i++)
+    {tone(speakerPin ,marry[i],1000);}
   }
   
 //  else
