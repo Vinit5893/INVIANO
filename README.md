@@ -17,4 +17,5 @@ Invisible Piano VSD Product based Hackathon
 
 ## Final Document with updated BOM
 
-[INVIANO_Stage_1_submission_updated_BOM.docx](INVIANO_Stage_1_submission_updated_BOM.docx)
+[INVIANO_Stage_1_submission_updated_BOM.docx](INVIANO_Stage_1_submission_updated_BOM.docx) -------
+[INVIANO_Stage_1_submission_updated_BOM.pdf](INVIANO_Stage_1_submission_updated_BOM.pdf)
